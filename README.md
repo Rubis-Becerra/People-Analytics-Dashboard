@@ -1,9 +1,11 @@
 # 📊 People Analytics – Captación y Retención | Power BI Dashboard
 
 
-#### - Ver Dashboard Interactivo 👉 https://app.powerbi.com/view?r=eyJrIjoiODY2NDNmNDAtNDFkYS00YjE4LWIzNWEtNWJmYmQzMzQ3MzhlIiwidCI6Ijc3MDI2YzQzLTFmNWMtNDEyYy1iNjg1LTJkNTM4Y2Q4NWIzMCIsImMiOjR9
+#### - Ver Dashboard Interactivo
+👉 https://app.powerbi.com/view?r=eyJrIjoiODY2NDNmNDAtNDFkYS00YjE4LWIzNWEtNWJmYmQzMzQ3MzhlIiwidCI6Ijc3MDI2YzQzLTFmNWMtNDEyYy1iNjg1LTJkNTM4Y2Q4NWIzMCIsImMiOjR9
 
-#### - Ver Análisis previo en Excel 👉 
+#### - Ver Análisis previo en Excel 
+👉 https://github.com/Rubis-Becerra/People-Analytics-Dashboard/tree/main/An%C3%A1lisis%20Excel
 
 
 ## 🧠 Contexto del Proyecto
@@ -57,6 +59,9 @@ Para ello, se realiza un servicio de consultoría en HR People Analytics, utiliz
 
 ### Análisis de Empleados Inactivos
 ![Vista General](Dash_views/Dash_PA_Inactiv2.0.png)
+
+#### Ver todas las Views: https://github.com/Rubis-Becerra/People-Analytics-Dashboard/tree/main/Dash_views
+
 
 ---
 
@@ -162,6 +167,6 @@ Mi enfoque combina análisis de datos con **visión de negocio y toma de decisio
 📫 **Contacto**
 - **LinkedIn**: *www.linkedin.com/in/rubis-becerra*
 - **Portfolio Power BI**: *(agregar link)*
-- **GitHub**: *https://github.com/Rubis-Becerra/Gestion-Ventas-Sales_Dashboard*
+- **GitHub**: *https://github.com/Rubis-Becerra/People-Analytics-Dashboard*
 
 💼 **Abierta a oportunidades laborales en posiciones de Analista de Datos y Business Intelligence**.
