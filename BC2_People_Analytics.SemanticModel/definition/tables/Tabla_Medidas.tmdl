@@ -1,0 +1,327 @@
+table Tabla_Medidas
+	lineageTag: 2971257f-86ef-4c0b-ad6c-6dda81aa583f
+
+	measure Qtd_Empleados_Act = ```
+			
+			                CALCULATE(
+			                    DISTINCTCOUNT(BD[ID]),
+			                    BD[Estado de miembro]="Activo"
+			                    )
+			```
+		formatString: 0
+		displayFolder: Activos
+		lineageTag: 0bbe12ff-7292-498a-8396-ae45fa5e946e
+
+	measure Satisfaccion_Act = ```
+			
+			                CALCULATE(
+			                    AVERAGE(BD[Índice de Satisfaccion]),
+			                    BD[Estado de miembro]="Activo"
+			                )
+			```
+		formatString: 0.00
+		displayFolder: Activos
+		lineageTag: 867181e2-6152-497c-9267-28cc04797fcf
+
+	measure Total_Salario_Act = ```
+			
+			                CALCULATE(
+			                    SUM(BD[Salario mensual corregido]),
+			                    BD[Estado de miembro]="Activo"
+			                )
+			```
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Activos
+		lineageTag: 7429507c-fd21-4050-b57e-00218c6b1c2a
+
+	measure Tiempo_medio_Act = ```
+			
+			                AVERAGEX(
+			                    FILTER(BD,BD[Estado de miembro]="Activo"),
+			                    DATEDIFF(BD[Fecha de Contratacion],DATE(2024,01,01),MONTH)/12
+			                )
+			```
+		formatString: 0.0
+		displayFolder: Activos
+		lineageTag: b894c7ca-247e-41c5-b875-6d8e87982194
+
+	measure Media_Salario_Act = ```
+			
+			                    CALCULATE(
+			                        AVERAGE(BD[Salario mensual corregido]),
+			                        BD[Estado de miembro]= "Activo"
+			                    )
+			```
+		formatString: \$#,0;-\$#,0;\$#,0
+		displayFolder: Activos
+		lineageTag: 884e8e7e-29c4-42c6-b903-47bf5665e559
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure '% Total_Empleados_Act' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        DISTINCTCOUNT(BD[ID]),
+			        BD[Estado de miembro] = "Activo"
+			    ),
+			    CALCULATE(
+			        DISTINCTCOUNT(BD[ID]),
+			        BD[Estado de miembro] = "Activo",
+			        ALL(BD)
+			    )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Activos
+		lineageTag: 8a17fe01-b707-4e7f-856f-1beff263808f
+
+	measure Qtd_GeneroF_Act = ```
+			
+			COALESCE(
+			    CALCULATE(
+			        COUNTROWS(BD),
+			        BD[Sexo] = "F",
+			        BD[Estado de miembro] = "Activo"
+			    ),
+			    0
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Activos
+		lineageTag: 765e3d0c-7d8d-465a-b3fc-276c2073ac58
+
+	measure Qtd_GeneroM_Act = ```
+			
+			COALESCE(
+			    CALCULATE(
+			        COUNTROWS(BD),
+			        BD[Sexo] = "M",
+			        BD[Estado de miembro] = "Activo"
+			    ),
+			    0
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Activos
+		lineageTag: 3e86bcf0-357e-4498-b83d-2795f52294c9
+
+	measure %GeneroF_Act = ```
+			
+			                DIVIDE(
+			                    [Qtd_GeneroF_Act],
+			                    CALCULATE(
+			                        COUNTROWS(BD),
+			                        BD[Estado de miembro]="Activo")
+			                )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Activos
+		lineageTag: 896adaef-9676-4804-8c23-4f4bdcb989ad
+
+	measure %GeneroM_Act = ```
+			
+			                DIVIDE(
+			                    [Qtd_GeneroM_Act],
+			                    CALCULATE(
+			                        COUNTROWS(BD),
+			                        BD[Estado de miembro]="Activo")
+			                )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Activos
+		lineageTag: d36e8484-f423-4cd4-a297-ec94f8afa26a
+
+	measure Qtd_Empleados_Inact = ```
+			
+			                    CALCULATE(
+			                            DISTINCTCOUNT(BD[ID]),
+			                            KEEPFILTERS(
+			                            BD[Estado de miembro]<>"Activo")
+			                    )
+			```
+		formatString: 0
+		displayFolder: Inactivos
+		lineageTag: 28a81cda-7068-4784-b390-03dc2d3d9c2e
+
+	measure Satisfaccion_Inact = ```
+			
+			                    CALCULATE(
+			                        AVERAGE(BD[Índice de Satisfaccion]),
+			                        KEEPFILTERS(
+			                        BD[Estado de miembro] IN {"Despedido", "Solicito despido"})
+			                    )
+			```
+		displayFolder: Inactivos
+		lineageTag: c197f657-4b8e-451a-a5a7-c29f7b0b1d54
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Total_Salario_Inact = ```
+			
+			                    CALCULATE(
+			                        SUM(BD[Salario mensual corregido]),
+			                        KEEPFILTERS(
+			                        BD[Estado de miembro] IN {"Despedido", "Solicito despido"})
+			                        )
+			```
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Inactivos
+		lineageTag: 3f5804dc-9662-4954-adc5-26557eb42ca4
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
+
+	measure Tiempo_medio_Inact = ```
+			
+			                    AVERAGEX(
+			                        KEEPFILTERS(
+			                        FILTER(BD,BD[Estado de miembro] IN {"Despedido", "Solicito despido"})),
+			                        DATEDIFF(BD[Fecha de Contratacion],BD[Fecha de Salida],MONTH)/12
+			                        )
+			```
+		displayFolder: Inactivos
+		lineageTag: a83c7005-8421-41be-9868-b4139a8efe67
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Media_Salario_Inact = ```
+			
+			                    CALCULATE(
+			                            AVERAGE(BD[Salario mensual corregido]),
+			                            KEEPFILTERS(
+			                            BD[Estado de miembro] IN {"Despedido", "solicito despido"})
+			                        )
+			```
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		displayFolder: Inactivos
+		lineageTag: 9d87da41-c554-4515-bff0-01893b4f26a2
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-ES"}
+
+	measure Qtd_Empleados_Desp = ```
+			
+			                    CALCULATE(
+			                            DISTINCTCOUNT(BD[ID]),
+			                            BD[Estado de miembro]= "Despedido"
+			                    )
+			```
+		formatString: 0
+		displayFolder: Inactivos
+		lineageTag: 6743b208-a4de-4832-91da-efe46317fdf5
+
+	measure Qtd_Empleados_Soldesp = ```
+			
+			                    CALCULATE(
+			                            DISTINCTCOUNT(BD[ID]),
+			                            BD[Estado de miembro]= "Solicito despido"
+			                    )
+			```
+		formatString: 0
+		displayFolder: Inactivos
+		lineageTag: d0387716-ded1-443d-96e2-10bd1eebc434
+
+	measure '% Total_Empleados_Inact' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        DISTINCTCOUNT(BD[ID]),
+			        KEEPFILTERS(
+			        BD[Estado de miembro]<>"Activo")
+			    ),
+			    CALCULATE(
+			        DISTINCTCOUNT(BD[ID]),
+			        KEEPFILTERS(
+			        BD[Estado de miembro]<>"Activo"),
+			        ALL(BD)
+			    )
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Inactivos
+		lineageTag: 72eacea2-9148-4fbc-9bcd-bbc130528fd9
+
+	measure '% Total_Empleados_InactIN' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        DISTINCTCOUNT(BD[ID]),
+			        KEEPFILTERS(
+			        BD[Estado de miembro] IN {"Despedido", "Solicito despido"})
+			    ),
+			    CALCULATE(
+			        DISTINCTCOUNT(BD[ID]),
+			        KEEPFILTERS(
+			        BD[Estado de miembro] IN {"Despedido", "Solicito despido"}),
+			        ALL(BD)
+			    )
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Inactivos
+		lineageTag: 60e59e89-1f7d-4ca1-8f62-6a012cb3249b
+
+	measure Qtd_Empleados_InactIN = ```
+			
+			                    CALCULATE(
+			                            DISTINCTCOUNT(BD[ID]),
+			                            KEEPFILTERS(
+			                            BD[Estado de miembro] IN {"Despedido", "Solicito despido"})
+			                    )
+			```
+		formatString: 0
+		displayFolder: Inactivos
+		lineageTag: 7c6189b0-5757-4c1a-8b8e-536f0d4c9dc2
+
+	measure Qtd_GeneroNB_Act = ```
+			
+			COALESCE(
+			    CALCULATE(
+			        COUNTROWS(BD),
+			        BD[Sexo] = "NB",
+			        BD[Estado de miembro] = "Activo"
+			    ),
+			    0
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Activos
+		lineageTag: e96802ee-c08e-4ce2-86b1-ed68251aad7c
+
+	measure %GeneroNB_Act = ```
+			
+			                DIVIDE(
+			                    [Qtd_GeneroNB_Act],
+			                    CALCULATE(
+			                        COUNTROWS(BD),
+			                        BD[Estado de miembro]="Activo")
+			                )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Activos
+		lineageTag: 92b5230e-066d-47e6-b11f-ae7bd69b6afb
+
+	measure Max_Satisfaccion = 5
+		formatString: 0
+		lineageTag: 3f570c02-3a8b-41ae-aa93-5b08113b3ccb
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure Min_Satisfaccion = ```
+			0
+			
+			```
+		formatString: 0
+		lineageTag: f19bcc86-506e-43cc-b99f-8734631deea0
+
+	partition Tabla_Medidas = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

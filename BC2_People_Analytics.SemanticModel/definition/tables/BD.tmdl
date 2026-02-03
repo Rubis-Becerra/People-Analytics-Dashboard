@@ -1,0 +1,222 @@
+table BD
+	lineageTag: 9cf0dfc8-01b4-4453-b4b0-2b355d95de06
+
+	column 'Nombre del empleado'
+		dataType: string
+		lineageTag: ec39f2e8-c800-4de9-9e3e-d53273fce51b
+		summarizeBy: none
+		sourceColumn: Nombre del empleado
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: string
+		lineageTag: a9f87588-bceb-4360-973d-e51dcc0b80bc
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Salario mensual corregido'
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: aa1e926b-0e53-48f6-bbde-3257e48d13c5
+		summarizeBy: sum
+		sourceColumn: Salario mensual corregido
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column Cargo
+		dataType: string
+		lineageTag: 2378a9b8-080a-4e8d-87a9-f3ea7b56c5f0
+		summarizeBy: none
+		sourceColumn: Cargo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de Nacimiento'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: e063a188-c8ad-436d-9793-34b40a487570
+		summarizeBy: none
+		sourceColumn: Fecha de Nacimiento
+
+		variation Variación
+			isDefault
+			relationship: c97f3dd2-0757-4c1f-94d1-20adcb2943ad
+			defaultHierarchy: LocalDateTable_cc2e6bc1-1ad4-40ff-ac54-49e0f00566fa.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Sexo
+		dataType: string
+		lineageTag: 8e991a55-2487-4dc7-8f2d-6f4dbfe650f4
+		summarizeBy: none
+		sourceColumn: Sexo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estado Civil'
+		dataType: string
+		lineageTag: 4acf2e32-4918-475e-8a5a-a477dec1a9a6
+		summarizeBy: none
+		sourceColumn: Estado Civil
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de Contratacion'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 7aa292e4-a884-404e-9300-88185d436ee0
+		summarizeBy: none
+		sourceColumn: Fecha de Contratacion
+
+		variation Variación
+			isDefault
+			relationship: 208e5af3-d536-4f7f-bdcc-dc58b094f56d
+			defaultHierarchy: LocalDateTable_7b29ceb4-c965-494b-90e3-854fc93abde8.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Fecha de Salida'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c89ff4c4-9c91-4ebd-a8bf-219ad7547ef2
+		summarizeBy: none
+		sourceColumn: Fecha de Salida
+
+		variation Variación
+			isDefault
+			relationship: c5818d76-7671-47c8-96a7-d54013da128b
+			defaultHierarchy: LocalDateTable_dbd18f5e-b090-4439-b75b-bc57708fc00e.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Motivo Salida'
+		dataType: string
+		lineageTag: 24e73197-a70f-4bd1-ac41-be06bf3fea38
+		summarizeBy: none
+		sourceColumn: Motivo Salida
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estado de miembro'
+		dataType: string
+		lineageTag: 0109f32d-1670-4e5a-b5c3-45c52da40d4e
+		summarizeBy: none
+		sourceColumn: Estado de miembro
+
+		annotation SummarizationSetBy = Automatic
+
+	column Departamento
+		dataType: string
+		lineageTag: 9e0e8c66-4b7b-405e-9ed5-c8ba97728146
+		summarizeBy: none
+		sourceColumn: Departamento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fuente Reclutamiento'
+		dataType: string
+		lineageTag: a143034c-8c2b-436a-a1e5-cb24b790a00e
+		summarizeBy: none
+		sourceColumn: Fuente Reclutamiento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Registro de rendimiento '
+		dataType: string
+		lineageTag: e58962f4-d680-4c51-9253-e0b3df880814
+		summarizeBy: none
+		sourceColumn: "Registro de rendimiento "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Índice de Satisfaccion'
+		dataType: double
+		lineageTag: 7037b715-f3ad-45e7-b76b-61e5d312e2fc
+		summarizeBy: sum
+		sourceColumn: Índice de Satisfaccion
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Última atualización de rendimiento'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 4e6762b7-3c46-4f05-bad1-b05bd911354e
+		summarizeBy: none
+		sourceColumn: Última atualización de rendimiento
+
+		variation Variación
+			isDefault
+			relationship: 50feb05a-c189-4335-bc4a-5419c22c6634
+			defaultHierarchy: LocalDateTable_82f56a49-9e56-4294-a7e7-5f9986213f52.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Rango_TiempoMedio = ```
+			
+			                    VAR Tiempo_Medio = IF(
+			                                            ISBLANK(BD[Fecha de Salida]),
+			                                            DATEDIFF(
+			                                                BD[Fecha de Contratacion],
+			                                                "01/01/2024",
+			                                                MONTH),
+			                                            DATEDIFF(
+			                                                BD[Fecha de Contratacion],
+			                                                BD[Fecha de Salida],
+			                                                MONTH)
+			                                        )/12
+			                    VAR Rango = SWITCH(
+			                                        TRUE(),
+			                                        Tiempo_Medio<=2, "0 - 2",
+			                                        Tiempo_Medio<=4, "2 - 4",
+			                                        Tiempo_Medio<=6, "4 - 6",
+			                                        Tiempo_Medio<=8, "6 - 8",
+			                                        Tiempo_Medio>8, "8+"
+			                                )
+			RETURN Rango
+			```
+		lineageTag: aaad1ba4-95bd-431e-82a6-249aefda603e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BD = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\LENOVO\OneDrive\Documentos\C_Rubis\Master PBi\N2_F_DAX\BC1_FDAX_POWERBI\BC1_FDAX\RS\RH_dataset.xlsx"), null, true),
+				    BD_Sheet = Origen{[Item="BD",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(BD_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Nombre del empleado", type text}, {"ID", type text}, {"Puntuacion rendimiento ID", Int64.Type}, {"Salario mensual corregido", Currency.Type}, {"Cargo", type text}, {"Fecha de Nacimiento", type date}, {"Sexo", type text}, {"Estado Civil", type text}, {"Fecha de Contratacion", type date}, {"Fecha de Salida", type any}, {"Motivo Salida", type text}, {"Estado de miembro", type text}, {"Departamento", type text}, {"Fuente Reclutamiento", type text}, {"Registro de rendimiento ", type text}, {"Encuesta de compromiso", type number}, {"Índice de Satisfaccion", type number}, {"SpecialProjectsCount", Int64.Type}, {"Última atualización de rendimiento", type date}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Tipo cambiado","Maria-","Maria",Replacer.ReplaceText,{"Nombre del empleado"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","Técnico de Produccion I","Técnico de Producción I",Replacer.ReplaceText,{"Cargo"}),
+				    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1","Técnico de Produccion II","Técnico de Producción II",Replacer.ReplaceText,{"Cargo"}),
+				    #"Valor reemplazado3" = Table.ReplaceValue(#"Valor reemplazado2","Director de Produccion","Director de Producción",Replacer.ReplaceText,{"Cargo"}),
+				    #"Valor reemplazado4" = Table.ReplaceValue(#"Valor reemplazado3","Produccion","Producción",Replacer.ReplaceText,{"Departamento"}),
+				    #"Valor reemplazado5" = Table.ReplaceValue(#"Valor reemplazado4","Indicacion de empleados","Indicación de empleados",Replacer.ReplaceText,{"Fuente Reclutamiento"}),
+				    #"Valor reemplazado6" = Table.ReplaceValue(#"Valor reemplazado5","Por debajo de lo esperado","Por debajo de lo Esperado",Replacer.ReplaceText,{"Registro de rendimiento "}),
+				    #"Valor reemplazado7" = Table.ReplaceValue(#"Valor reemplazado6","Gerente de Produccion","Gerente de Producción",Replacer.ReplaceText,{"Cargo"}),
+				    #"Texto recortado" = Table.TransformColumns(#"Valor reemplazado7",{{"Nombre del empleado", Text.Trim, type text}, {"ID", Text.Trim, type text}, {"Cargo", Text.Trim, type text}, {"Sexo", Text.Trim, type text}, {"Estado Civil", Text.Trim, type text}, {"Motivo Salida", Text.Trim, type text}, {"Estado de miembro", Text.Trim, type text}, {"Departamento", Text.Trim, type text}, {"Fuente Reclutamiento", Text.Trim, type text}, {"Registro de rendimiento ", Text.Trim, type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Texto recortado",{"Puntuacion rendimiento ID", "Encuesta de compromiso", "SpecialProjectsCount"}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas quitadas",{{"Fecha de Salida", type date}})
+				in
+				    #"Tipo cambiado1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

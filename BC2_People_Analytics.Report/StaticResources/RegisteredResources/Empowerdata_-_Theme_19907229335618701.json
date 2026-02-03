@@ -1,0 +1,86 @@
+{
+  "name": "Empowerdata - Theme 1",
+  "textClasses": {
+    "label": {
+      "color": "#3D3935",
+      "fontSize": 12
+    },
+    "callout": {
+      "color": "#3D3935",
+      "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+      "fontSize": 25
+    },
+    "title": {
+      "color": "#3D3935",
+      "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif"
+    },
+    "header": {
+      "color": "#3D3935",
+      "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif"
+    }
+  },
+  "dataColors": [
+    "#41526B",
+    "#136AE7",
+    "#D3D3CF",
+    "#425C73",
+    "#FBF85B",
+    "#E1DC4D",
+    "#898165",
+    "#ABCBF3"
+  ],
+  "bad": "#820A16",
+  "neutral": "#887104",
+  "good": "#045519",
+  "center": "#438399",
+  "maximum": "#2E3C50",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "transparency": 100
+          }
+        ],
+        "visualHeader": [
+          {
+            "transparency": 0
+          }
+        ],
+        "visualTooltip": [
+          {
+            "titleFontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "valueFontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            }
+          }
+        ],
+        "outspacePane": [
+          {
+            "transparency": 100
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 100
+          }
+        ]
+      }
+    }
+  }
+}

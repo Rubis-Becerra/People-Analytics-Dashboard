@@ -1,0 +1,24 @@
+model Model
+	culture: es-MX
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["BD","Tabla_Medidas"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table BD
+ref table DateTableTemplate_34c231ee-ff1c-431b-98cc-923ae072e746
+ref table LocalDateTable_cc2e6bc1-1ad4-40ff-ac54-49e0f00566fa
+ref table LocalDateTable_7b29ceb4-c965-494b-90e3-854fc93abde8
+ref table LocalDateTable_82f56a49-9e56-4294-a7e7-5f9986213f52
+ref table Tabla_Medidas
+ref table LocalDateTable_dbd18f5e-b090-4439-b75b-bc57708fc00e
+
+ref cultureInfo es-MX
+

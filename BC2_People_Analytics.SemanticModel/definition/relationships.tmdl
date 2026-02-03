@@ -1,0 +1,20 @@
+relationship c97f3dd2-0757-4c1f-94d1-20adcb2943ad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BD.'Fecha de Nacimiento'
+	toColumn: LocalDateTable_cc2e6bc1-1ad4-40ff-ac54-49e0f00566fa.Date
+
+relationship 208e5af3-d536-4f7f-bdcc-dc58b094f56d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BD.'Fecha de Contratacion'
+	toColumn: LocalDateTable_7b29ceb4-c965-494b-90e3-854fc93abde8.Date
+
+relationship 50feb05a-c189-4335-bc4a-5419c22c6634
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BD.'Última atualización de rendimiento'
+	toColumn: LocalDateTable_82f56a49-9e56-4294-a7e7-5f9986213f52.Date
+
+relationship c5818d76-7671-47c8-96a7-d54013da128b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BD.'Fecha de Salida'
+	toColumn: LocalDateTable_dbd18f5e-b090-4439-b75b-bc57708fc00e.Date
+
