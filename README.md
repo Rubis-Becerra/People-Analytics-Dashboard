@@ -1,12 +1,13 @@
 # 📊 People Analytics – Captación y Retención | Power BI Dashboard
 
 
-#### - Ver Dashboard Interactivo
+### - Ver Dashboard Interactivo
 👉 https://app.powerbi.com/view?r=eyJrIjoiODY2NDNmNDAtNDFkYS00YjE4LWIzNWEtNWJmYmQzMzQ3MzhlIiwidCI6Ijc3MDI2YzQzLTFmNWMtNDEyYy1iNjg1LTJkNTM4Y2Q4NWIzMCIsImMiOjR9
 
-#### - Ver Análisis previo en Excel 
+### - Ver Análisis previo en Excel 
 👉 https://github.com/Rubis-Becerra/People-Analytics-Dashboard/tree/main/An%C3%A1lisis%20Excel
 
+---
 
 ## 🧠 Contexto del Proyecto
 Se tiene como cliente a una empresa de tecnología que experimentó un fuerte crecimiento entre 2019 y 2021, impulsado por la expansión de operaciones y el aumento de ingresos. Para sostener esta demanda, la empresa realizó contrataciones masivas.
@@ -160,8 +161,10 @@ El alto nivel de satisfacción y menor rotación en TI sugieren la existencia de
 - Revisar cargas de trabajo y procesos operativos.
 - Replicar prácticas exitosas del departamento de TI. 
 
+---
+
 ## 👩🏻‍💼 Sobre mí
-Soy **Ingeniera Civil con experiencia en gestión de proyectos**, actualmente en transición al mundo de **Data Analytics & Business Intelligence**.  
+Soy **Ingeniera Civil con experiencia en gestión de proyectos**, actualmente en transición al mundo de **Data Analytics & Business Intelligence** y estudiante de **Ciencia de Datos**.  
 Mi enfoque combina análisis de datos con **visión de negocio y toma de decisiones estratégicas**.
 
 📫 **Contacto**
