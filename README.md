@@ -92,7 +92,7 @@ Mi enfoque combina análisis de datos con **visión de negocio y toma de decisio
 
 📫 **Contacto**
 - **LinkedIn**: *www.linkedin.com/in/rubis-becerra*
-- **Portfolio Power BI**: *(agregar link)*
+- **Portfolio Power BI**: *https://bit.ly/Portfolio_Repositorio_RB*
 - **GitHub**: *https://github.com/Rubis-Becerra/People-Analytics-Dashboard*
 
 💼 **Abierta a oportunidades laborales en posiciones de Analista de Datos y Business Intelligence**.
